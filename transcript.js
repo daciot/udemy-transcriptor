@@ -44,7 +44,7 @@ async function save(transcript) {
     const storedTranscripts = data.transcriptions || {};
     
     // if already in the map throw exception
-    // if (storedTranscripts[key]) throw new Error("Transcript already exists");
+    if (storedTranscripts[key]) throw new Error("Transcript already exists");
     
     storedTranscripts[key] = transcript;
     

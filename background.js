@@ -24,8 +24,9 @@ browser.runtime.onMessage.addListener(async (message, sender) => {
 browser.webNavigation.onHistoryStateUpdated.addListener(async (details) => {
     if (details.url.includes("udemy.com") && details.frameId === 0) { 
         try {
-            await browser.tabs.executeScript(details.tabId, {
-                file: "content.js"
+            await browser.scripting.executeScript({
+                target: { tabId: details.tabId },
+                files: ["content.js"] 
             });
         } catch (e) {
             console.error("Failed to reinject content.js:", e);

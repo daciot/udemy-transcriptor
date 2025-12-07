@@ -17,9 +17,7 @@ function setupButtonListener() {
     if (toggleBtn) {
         if (!toggleBtn._listenerAdded) {
             toggleBtn.addEventListener('click', transcriptBtnClickHandler);
-            toggleBtn._listenerAdded = true; 
-            
-            observer.disconnect();
+            toggleBtn._listenerAdded = true;
         }
     }
 }

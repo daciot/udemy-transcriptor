@@ -10,7 +10,8 @@
     "activeTab",
     "storage",
     "downloads",
-    "webNavigation"
+    "webNavigation",
+    "scripting"
   ],
   "background": {
     "scripts": ["background.js"]
@@ -19,10 +20,10 @@
     {
       "matches": ["*://*.udemy.com/*"],
       "js": [
-        "content.js",
+        "storage.js",
         "toast/toast.js",
         "transcript.js",
-        "storage.js"
+        "content.js"
       ],
       "css": ["toast/toast.css"],
       "run_at": "document_idle"
