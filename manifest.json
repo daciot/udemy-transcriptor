@@ -20,6 +20,7 @@
     {
       "matches": ["*://*.udemy.com/*"],
       "js": [
+        "dom.js",
         "storage.js",
         "toast/toast.js",
         "transcript.js",

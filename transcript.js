@@ -1,8 +1,3 @@
-
-
-const currentContainerSelector = '[class*="curriculum-item-link--is-current"]';
-const titleSelector = '[data-purpose="item-title"]';
-const transcriptSelector = '[data-purpose="cue-text"]';
 const downloadFolder = 'transcripts';
 const sanitizeRegex = /[^a-z0-9à-ú .-]/gi;
 const transcriptionsKey = 'transcriptions';
@@ -10,12 +5,11 @@ const transcriptionsKey = 'transcriptions';
 const downloadActionName = "downloadTranscriptAction";
 
 function getTitle() {
-    const activeContainer = document.querySelector(currentContainerSelector);
-    return activeContainer?.querySelector(titleSelector)?.innerText;
+    return dom.getCurrentTranscriptTitle();
 }
 
 function get() {
-    return Array.from(document.querySelectorAll(transcriptSelector))
+    return Array.from(dom.getTranscriptEl())
         .map(x => x.textContent)
         .join("\n");
 }

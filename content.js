@@ -1,10 +1,6 @@
-
-const transcriptBtnSelector = '[data-purpose="transcript-toggle"]';
-const transcriptPanelSelector = '[data-purpose="transcript-panel"]';
-
 function transcriptBtnClickHandler(){
-    const panel = document.querySelector(transcriptPanelSelector);        
-    if (panel) {
+    const panelEl = dom.getTranscriptPanelEl();        
+    if (panelEl) {
         transcript.save(transcript.get())
             .then(transcript.download)
             .catch(showToast);
@@ -12,7 +8,7 @@ function transcriptBtnClickHandler(){
 }
 
 function setupButtonListener() {
-    const toggleBtn = document.querySelector(transcriptBtnSelector);
+    const toggleBtn = dom.getToggleTranscriptBtn();
 
     if (toggleBtn) {
         if (!toggleBtn._listenerAdded) {
